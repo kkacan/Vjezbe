@@ -1,0 +1,48 @@
+-lt (manje od)
+-gt (veæe od)
+-le (manje od ili jednako)
+-ge (veæe od ili jednako)
+-eq (jednako)
+-ne (razlièito)
+
+< (manje od)
+ > (veæe od)
+ = (jednako)
+ != (razlièito)
+-n (vraæa 0 ako niz ima duljinu)
+-z (vraæa 0 ako je niz prazan)
+
+-e (datoteka postoji)
+-s (datoteka ima velièinu veæu od 0)
+-d (datoteka je direktorij)
+
+cat Napuni2 | cut -c 1-3 | uniq -u -prva 3 slova rijeèi jedinstvena
+grep -E "^[0-9]+[a-Z][0-9]*$|^[0-9]*[a-Z][0-9]+$" /etc/inittab -niz saèinjen od jednog slova i jedne ili više brojki
+grep -E "^[asdfgeiou]f4g$" /usr/share/magic -4 slova, a slova mogu biti samo iz niza asdfgeiou
+grep -E ^a.*bu.*y$ /usr/share/magic | wc -l -poèinju slovom 'a', završavaju slovom 'y', a bilo gdje izmedu sadrže niz 'bu'
+
+
+cnt =0
+while [ $cnt -le 10 ]; do
+echo $cnt ;
+((cnt++));
+done
+
+while read line ; do
+echo $line ;
+echo $line | rev ; # obrni liniju
+done
+
+cnt =15
+until [ $cnt -lt 10 ]; do
+echo $cnt ;
+((cnt--));
+done
+
+distros =' Ubuntu Arch CentOS Gentoo Quit '
+select distro in $distros ; do
+if [ $distro == 'Quit ' ]; then
+break ;
+fi;
+
+ls -l /usr/bin/[^a-z]* - ne zapoèinju sa malim slovom
