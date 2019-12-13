@@ -1,0 +1,68 @@
+1. Koji su postupci u svakom koraku AES algoritma?
+Substitute bytes - koristi s-box za zamjenu bajt po bajt, ShiftRows, MixColumns i AddRoundKey - koristi XOR trenutnog bloka sa dijelom proširenog kljuèa.
+
+2. Koliko koraka ima AES 192 algoritam?
+128 - 10, 192 -12, 256 - 14 rundi
+
+3. Opišite postupak kriptiranja cezarovom šifrom.
+Kriptira se tako da se abeceda pomakne za neki korak npr. ako pomaknemo za jedan korak u desno A postaje B, B postaje C itd.
+4. Što je to "cipher suite"? 
+Skup sigurnosnih algoritama:
+- algoritam za razmjenu kljuèeva
+- algoritam za šifriranje prometa na mreži i njegov naèin rada (mod)
+- algoritam za autentikaciju poruke, funkcija sažimanja koja se koristi kao MAC za
+autentikaciju
+
+5. Što je prednost korištenja Eliptièih krivulja u kriptiranju?
+-Potreban manji kljuè za enkripciju u odnosu na RSA, koji štedi resurse
+
+6. Izraèunaj NZD (najveæi zajednièki djelitelj i riješi ax + by = NZD(a,b);
+
+7. Što je to hash i zašto služi?
+Hash je algoritam koji kreira hash poruku koja služi za provjeru integriteta i autentiènosti poruke. Koristi se za provjeru ispravnosti kod distribucije softwera, spremanja lozinki u bazu podataka i aukcije.
+
+8. Navedite  karakteristike kriptografskog hash algotima ( 4 funkcije koje mora imati).
+Kompresija, Efikasnost, Jednosmjeran i otporan na kolizije.
+
+9. Opišite jedan hash algoritam koji ste radili na predavanjima
+MD5 kriptira hash od 128 bita, ulazna poruka se razdvaja u blokove od 512 bita a zadnji blok se nadopunjava do dužine 512 bita. Algoritam radi s 128 bitnim stanjem podjeljenim u 4 32 bitne rijeèi. Obrada jednog bloka sastoji se od 4 stupnja sa po 16 operacija.
+
+10. Opišite postupak razmjene poruka tajnim i javnim kljuèem.
+Javni kljuè se objavi javno a tajni kljuè imaju pošiljatelj i primatelj. Pošiljatelj poruku enkriptira javnim kljuèem koji je generiran tajnim kljuèem primatelja, a primatelj dekriptira poruku sa tajnim kljuèem.
+
+11. Što razlikuje RSA i AES algoritam?
+AES je simetrièni algoritam šifriranja jedan se kljuè koristiti za šifriranje, a potom i dešifriranje poruke.  RSA je asimetrièni algoritam šifriranja - koristi se par kljuèeva, jedan koji držite za sebe (privatno), a jedan koji dijelite s ostatkom svijeta (javno).
+
+12. Što je kriptografija, kriptoanaliza, kriptologija?
+Kriptografija - Tradicionalno, projektiranje algoritama / protokola
+Kriptoanaliza - Razbijanje algoritama / protokola
+Kriptologija je kriptografija i kriptoanaliza
+
+13. Odredite jedan A tako da bude A mod 5 = 7
+A = xy+r, A=5y+7 za neki broj y - nema riješenja
+
+14. Opišite korištenje monoalfabetske šifre.
+Jednostavna zamjena svakog slova sa nekim drugim slovom koje je unaprijed odreðeno.
+
+15. Navedite primjer jedne monoalafabetske šifre.
+
+16. Opišite kako se potpisuje poruka korištenjem javnog i tajnog kljuèa.
+Javni kljuè se generira tajnim kljuèem. Poruka se potpisuje javnim kljuèem ali se može otkljuèati samo sa tajnim kljuèem kojim je generiran javni kljuè.
+
+17. Opište posupak kriptiranje polialafebetskom šifrom.
+Koristi se više alfabeta za šifriranje tako da se za svako slovo koristi drugi alfabet.
+18. Navedite jednu polialafabetsku šifru.
+
+19. Kako se raèuna tajni kljuè - primjer?
+Uzmemo dva velika prosta broja p i q. Njihov umnožak je broj n. Izaberemo broj e koji ima isti djeljitelj kao broj n. Broj e primjenimo kao eksponent broja n da dobijemo javni kljuè. Tajni kljuè se raèuna po formuli  (p - 1)*(q - 1).
+20. Što je funkcija TLS protokola?
+Osigurava privatnu (sigurnu) komunikaciju izmeðu klijenta i servera, osigurava indetitet strana u komunikaciji i ukljuèuje provjeru integriteta poruke pomoæu provjere autentiènosti poruke.
+
+21. Što je asimertièna , a što simetrièna kripografija?
+Kod asimetriène kriptografije korise se dva kljuèa javni i tajni, a kod simetriène samo jedan kljuè.
+
+22. Što je S-box i gdje se koristi ?
+S-box je matrica bajtova koje koristi AES enkripcija kod faze zamjene bajtova.
+
+23. Opišite po èemi se razlikuju algoritmi za a)izradu HASH-a i b) kriptiranje poruka.
+Algoritam za hash izraðuje sažeti jednosmjeran potpis poruke koji služi za autentifikaciju. Algoritam za kriptiranje izraðuje poruku jednaku po velièini originalne poruke i radi u oba smjera za kritiranje i dekriptiranje.
